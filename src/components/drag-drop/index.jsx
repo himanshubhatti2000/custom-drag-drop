@@ -6,7 +6,7 @@ const DragDrop = () => {
   const { images, handleDrop, handleDragOver, removeImage } = useDragDrop();
 
   return (
-    <div>
+    <div className="container">
       <div id="drop_zone" onDrop={handleDrop} onDragOver={handleDragOver}>
         <p>
           Drag one or more files to this <i>drop zone</i>.
@@ -14,6 +14,7 @@ const DragDrop = () => {
       </div>
       {images.map((image, index) => (
         <img
+          className="dropped_img"
           onClick={() => removeImage(index)}
           key={index}
           src={image}
